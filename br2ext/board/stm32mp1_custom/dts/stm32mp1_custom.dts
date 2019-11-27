@@ -19,6 +19,14 @@
 		regulator-max-microvolt = <1800000>;
 		regulator-always-on;
 	};
+
+        soc: soc {
+            /* Only just to create aliase */
+        };
+
+        aliases {
+                soc = &soc;
+        };
 };
 
 &dsi {
