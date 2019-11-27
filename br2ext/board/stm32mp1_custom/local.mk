@@ -1,0 +1,4 @@
+#UBOOT_OVERRIDE_SRCDIR = ../uboot
+#LINUX_OVERRIDE_SRCDIR = ../linux
+#TCF_AGENT_OVERRIDE_SRCDIR = ../tcf-agent-1.7.0
+#LPC32XXCDL_OVERRIDE_SRCDIR = ../lpc32xxcdl-lpc32xx_cdl_v2.11
