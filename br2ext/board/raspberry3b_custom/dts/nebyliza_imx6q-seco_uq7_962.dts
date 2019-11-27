@@ -1,0 +1,216 @@
+/*
+ * Copyright 2012 Freescale Semiconductor, Inc.
+ * Copyright 2011 Linaro Ltd.
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+/dts-v1/;
+
+#include "imx6q.dtsi"
+#include "imx6qdl-seco_uq7_962.dtsi"
+#include "imx6qdl-seco_lvds_display.dtsi"
+
+/ {
+	model = "SECO i.MX6 Quad uQ7 (962) Board";
+	compatible = "fsl,imx6q-uq7_962", "fsl,imx6q";
+
+    spi0: xilinx_pci_spi.0 {
+    xlnx,family = "virtex7";
+    xlnx,fifo-exist = <0x1>;
+    xlnx,num-ss-bits = <0x5>;
+    xlnx,num-transfer-bits = <0x8>;
+    xlnx,sck-ratio = <0x200>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    spidev@0x00{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        device-type = "ADS54J60";
+        device-name = "ADC";
+        device-index = < 0 >;
+        upload-index = < 2 >;
+        };
+
+    spidev@0x01{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <1>;
+        device-type = "DAC39J82";
+        device-name = "DAC";
+        device-index = < 1 >;
+        upload-index = < 1 >;
+        device-check = < 1 >;
+        };
+
+    spidev@0x03{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <3>;
+        device-type = "AD5144";
+        device-name = "DPOD_SCAN_KV";
+        device-index = < 3 >;
+        };
+
+    spidev@0x04{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <4>;
+        device-type = "AD5144";
+        device-name = "DPOD_SCAN_UKV";
+        device-index = < 4 >;
+        };
+    };
+
+    spi1: xilinx_pci_spi.1 {
+    xlnx,family = "virtex7";
+    xlnx,fifo-exist = <0x1>;
+    xlnx,num-ss-bits = <11>;
+    xlnx,num-transfer-bits = <0x8>;
+    xlnx,sck-ratio = <0x200>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    spidev@0x00{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        device-type = "LMK04828";
+        device-name = "LMK";
+        device-index = < 100 >;
+        upload-index = < 0 >;
+        };
+
+    spidev@0x01{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <1>;
+        device-type = "AD5144";
+        device-name = "DPOD_KV";
+        device-index = < 101 >;
+        };
+
+    spidev@0x02{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <2>;
+        device-type = "AD5144";
+        device-name = "DPOD_UKV";
+        device-index = < 102 >;
+        };
+
+    spidev@0x03{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <3>;
+        device-type = "ADRF6518";
+        device-name = "FILT_SCAN_KV";
+        device-index = < 103 >;
+        };
+
+    spidev@0x04{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <4>;
+        device-type = "ADRF6520";
+        device-name = "FILT_SCAN_UKV";
+        device-index = < 104 >;
+        };
+
+    spidev@0x05{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <5>;
+        device-type = "PE4312";
+        device-name = "ATT_TX_KV";
+        device-index = < 105 >;
+        };
+
+    spidev@0x06{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <6>;
+        device-type = "PE4312";
+        device-name = "ATT_TX_UKV";
+        device-index = < 106 >;
+        };
+
+    spidev@0x07{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <7>;
+        device-type = "ADRF6518";
+        device-name = "FILT_KV";
+        device-index = < 107 >;
+        };
+
+    spidev@0x08{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <8>;
+        device-type = "ADRF6520";
+        device-name = "FILT_UKV";
+        device-index = < 108 >;
+        };
+
+    spidev@0x09{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <9>;
+        device-type = "PE4312";
+        device-name = "ATT_KV";
+        device-index = < 109 >;
+        };
+
+    spidev@0x0a{
+        compatible = "spidev";
+        spi-max-frequency = <1000000>;
+        reg = <10>;
+        device-type = "PE4312";
+        device-name = "ATT_UKV";
+        device-index = < 110 >;
+        };
+
+    };
+
+
+};
+
+//#include "adi-fmcomms2.dtsi"
+
+&ldb {
+	lvds-channel@0 {
+		crtc = "ipu2-di0";
+	};
+
+	lvds-channel@1 {
+		crtc = "ipu2-di1";
+	};
+};
+
+&mxcfb1 {
+	status = "okay";
+};
+
+&mxcfb2 {
+	status = "okay";
+};
+
+//&mxcfb3 {
+//	status = "okay";
+//};
+//
+//&mxcfb4 {
+//	status = "okay";
+//};
+
+&sata {
+	status = "okay";
+};
