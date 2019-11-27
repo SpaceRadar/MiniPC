@@ -1,0 +1,12 @@
+diff -purN --no-dereference tcf-agent-1.7.0-orig/agent/machine/arm/tcf/cpudefs-mdep.h tcf-agent-1.7.0/agent/machine/arm/tcf/cpudefs-mdep.h
+--- tcf-agent-1.7.0-orig/agent/machine/arm/tcf/cpudefs-mdep.h	2018-02-13 20:38:34.000000000 +0300
++++ tcf-agent-1.7.0/agent/machine/arm/tcf/cpudefs-mdep.h	2018-08-30 17:32:35.012995242 +0300
+@@ -40,7 +40,7 @@ extern void add_cpudefs_disassembler(Con
+ #endif
+ 
+ #if !defined(ENABLE_HardwareBreakpoints)
+-#  define ENABLE_HardwareBreakpoints 1
++#  define ENABLE_HardwareBreakpoints 0
+ #endif
+ 
+ #endif

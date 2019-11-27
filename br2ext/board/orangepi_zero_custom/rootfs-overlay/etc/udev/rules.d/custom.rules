@@ -1,0 +1,3 @@
+# Rules for ldpc,mdltr -*- conf -*-
+
+KERNEL=="tty[A-Z]*[0-9]|pppox[0-9]*|ircomm[0-9]*|noz[0-9]*|rfcomm[0-9]*", GROUP="default"

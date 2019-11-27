@@ -1,0 +1,16 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+        compatible = "xunlong,orangepi-zero";
+
+	fragment@0 {
+		target = <&soc>;
+		__overlay__ {
+                     gpio100: gpio_my {
+                              compatible = "my,gpio_driver";
+                              status     = "okay";
+                     };
+		};
+	};
+};
