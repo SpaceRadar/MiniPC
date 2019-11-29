@@ -37,7 +37,7 @@
 			description = "Ramdisk image";
 			data = /incbin/("./rootfs.cpio.gz");
 			arch = "arm";
-			compression = "gzip";
+			compression = "none";
 			os = "linux";
 			type = "ramdisk";
 			load = <0xc4400000>;
