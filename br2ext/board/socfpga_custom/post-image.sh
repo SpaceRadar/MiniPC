@@ -6,7 +6,6 @@ BOARD_DIR="$(dirname $0)"
 GENIMAGE_CFG="${BOARD_DIR}/genimage.cfg"
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
-ln -fs ${BOARD_DIR}/firmware /${BINARIES_DIR}
 ln -fs ${BOARD_DIR}/fit.its  /${BINARIES_DIR}/fit.its
 
 mkimage -f ${BINARIES_DIR}/fit.its ${BINARIES_DIR}/fit.itb

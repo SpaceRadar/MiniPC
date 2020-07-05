@@ -16,19 +16,19 @@
 			arch = "arm";
 			compression = "none";
 			os = "linux";
-			load = <0x01000000>;
-			entry = <0x01000000>;
+			load = <0x00100000>;
+			entry = <0x00100000>;
 			hash-1 {
 				algo = "sha1";
 			};
 		};
 		fdt-1 {
 			description = "Flattened Device Tree blob";
-			data = /incbin/("./raspberry3b_custom.dtb");
+			data = /incbin/("./socfpga_custom.dtb");
 			type = "flat_dt";
 			arch = "arm";
 			compression = "none";
-			load = <0x02600000>;
+			load = <0x100>;
 			hash-1 {
 				algo = "sha1";
 			};
@@ -40,7 +40,7 @@
 			compression = "gzip";
 			os = "linux";
 			type = "ramdisk";
-			load = <0x02700000>;
+			load = <0x02000000>;
 			hash-1 {
 				algo = "sha1";
 			};
