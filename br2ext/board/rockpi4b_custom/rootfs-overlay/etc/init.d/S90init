@@ -1,7 +1,6 @@
 #!/bin/sh
 
 start() {
-    mount /dev/mmcblk0p1 /mnt
     tcpsvd 0:21 ftpd ftpd -w /&
     echo "done"
 
