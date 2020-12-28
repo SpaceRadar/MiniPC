@@ -1,6 +1,6 @@
 .PHONY: init
 
-BRDIR=buildroot-2019.11-rc2
+BRDIR=buildroot-2020.11
 BOARD=stm32mp1_custom
 BR2EXT=br2ext
 PATCHED_PACKAGES=tcf-agent-1.7.0

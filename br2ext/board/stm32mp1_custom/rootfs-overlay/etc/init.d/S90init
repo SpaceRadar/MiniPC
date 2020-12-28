@@ -2,17 +2,7 @@
 
 start() {
 #    echo -n "Firmware rev: "
-#    cat /etc/firmware_rev
-#    modprobe r8152
-#    modprobe sr9800
-#    modprobe cdc_acm
-#    modprobe spidev
-#    modprobe snd-usb-audio
-#    modprobe snd-intel8x0
-#    modprobe uio
-#    sleep 3
-#    [ -d /sys/class/net/eth1 ] && dhclient -w -v eth1
-    mount /dev/mmcblk0p4 /mnt
+#    mount /dev/mmcblk0p4 /mnt
     tcpsvd 0:21 ftpd ftpd -w /&
     echo "done"
 

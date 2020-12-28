@@ -11,4 +11,3 @@
 /etc/ssh/ssh_host_ed25519_key		f	600	0	0	-	-	-	-	-
 /etc/ssh/ssh_host_rsa_key		f	600	0	0	-	-	-	-	-
 /mnt					d	775	0	default	-	-	-	-	-
-/sbin/automounter.sh                    f       777     0       0       -       -       -       -       -
